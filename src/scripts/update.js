@@ -1,8 +1,8 @@
-const fs = require("fs");
-const axios = require("axios");
-require("dotenv").config();
+const fs = require('fs');
+const axios = require('axios');
+require('dotenv').config();
 
-const SOURCE = "./.latest-collection";
+const SOURCE = './.latest-collection';
 
 const SyncCollection = async (api) => {
 
@@ -10,22 +10,22 @@ const SyncCollection = async (api) => {
   collection = JSON.stringify(collection);
   const collectionUid = process.env[`${api.toUpperCase()}_COLLECTION`];
 
-    console.log(api, 'Updating...');
+    console.log(api, 'Collection Updating....');
     
     axios({
-      method: "PUT",
+      method: 'PUT',
       url: `https://api.getpostman.com/collections/${collectionUid}`,
       headers: {
-        "X-Api-Key": process.env.POSTMAN_API_KEY,
-        "Content-Type": "application/json",
+        'X-Api-Key': process.env.POSTMAN_API_KEY,
+        'Content-Type': 'application/json',
       },
       data: collection,
-    }).then(()=>{ console.log(api,"collections Updated");  })
+    }).then(()=>{ console.log(api, 'Collection Updated....');  })
     .catch(()=>{  console.error('failed', api); })
 }
 
 const SyncCollectionAll = async () => {
-  apis = process.env.COLLECTIONS.split(",");
+  apis = process.env.COLLECTIONS.split(',');
   return apis.map((api) => SyncCollection(api));
 }
 
