@@ -6,7 +6,7 @@ const SOURCE = './.latest-collection';
 
 const SyncCollection = async (api) => {
 
-  let collection = { collection:JSON.parse(fs.readFileSync(`${SOURCE}/${api}-collection.json`)) }
+  let collection = { collection:JSON.parse(fs.readFileSync(`${SOURCE}/${api}-collection.json`)) };
   collection = JSON.stringify(collection);
   const collectionUid = process.env[`${api.toUpperCase()}_COLLECTION`];
 
