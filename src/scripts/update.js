@@ -20,8 +20,8 @@ const SyncCollection = async (api) => {
         'Content-Type': 'application/json',
       },
       data: collection,
-    }).then(()=>{ console.log(api, 'Collection Updated....');  })
-    .catch(()=>{  console.error('failed', api); })
+    }).then(()=>{ console.log(api, 'Collection Updated....'); })
+    .catch(()=>{  console.error('failed', api); });
 }
 
 const SyncCollectionAll = async () => {
@@ -29,4 +29,4 @@ const SyncCollectionAll = async () => {
   return apis.map((api) => SyncCollection(api));
 }
 
-module.exports = {  SyncCollection, SyncCollectionAll }
+module.exports = {  SyncCollection, SyncCollectionAll };

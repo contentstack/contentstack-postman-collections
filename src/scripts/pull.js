@@ -11,4 +11,4 @@ pull = () => {
     git.Gitpull();
 }
 
-module.exports = { pull }
+module.exports = { pull };
