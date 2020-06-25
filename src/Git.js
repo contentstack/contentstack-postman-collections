@@ -13,15 +13,13 @@ class Git {
 
       const { stderr, stdout } = spawnSync('git', ['pull'], { cwd: this.location });
       
-      console.log('Git Status---\n', stderr.toString());
-      console.log('Git Error---\n', stdout.toString());
+      console.log('\x1b[33m%s\x1b[0m', 'Git status: ', stderr.toString(), stdout.toString());
 
     } else {
       const { stderr, stdout } = spawnSync('git', 
                 ['clone', '--depth', 1, '--branch', this.branch, this.source, this.location]);
 
-      console.log('Git Status---\n', stderr.toString());
-      console.log('Git Error--->\n', stdout.toString());
+      console.log('\x1b[33m%s\x1b[0m', 'Git status: ', stderr.toString(), stdout.toString());
     }
   }
 }
