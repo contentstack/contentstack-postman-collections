@@ -20,6 +20,7 @@ class Git {
                 ['clone', '--depth', 1, '--branch', this.branch, this.source, this.location]);
 
       console.log('\x1b[33m%s\x1b[0m', 'Git status: ', stderr.toString(), stdout.toString());
+      
     }
   }
 }
