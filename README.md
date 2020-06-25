@@ -2,55 +2,143 @@
 
 [![Contentstack](https://www.contentstack.com/docs/static/images/contentstack.png)](https://www.contentstack.com/)
 
-This repository contains a script that will take a pull of latest collection and update collection on your system.
+The Contentstack Postman Collection is a set of preconfigured requests that will make it easy for you to get started with the [Contentstack APIs](https://www.contentstack.com/docs/developers#use-the-apis) and try out our API requests through the popular [Postman](https://www.getpostman.com/) REST client.
 
-[Postman](https://www.getpostman.com/) is a tool that lets you build and test HTTP requests in an easy-to-use interface without configuring a full development environment. For a quick start you can also reffer our docs site for [contentstack.com](https://www.contentstack.com/docs/developers/#use-the-apis)
+# Install Postman
 
-To import the collection, first `clone` this repository, then open the Postman utility and select the *`Import`* option. Select the *`Folder`* tab from the dialog and drag and drop the cloned repository folder into the target. Or update you collection by providing postman api key and collection uid in *`.env`* file
+To use the Contentstack Postman Collection, you will need the latest [Postman app](https://getpostman.com/) installed on your device. Postman is available for [Windows (x32)](https://dl.pstmn.io/download/latest/win32), [Windows (x64)](https://dl.pstmn.io/download/latest/win64), [Mac](https://dl.pstmn.io/download/latest/macos), and [Linux](https://dl.pstmn.io/download/latest/linux64) environments.
 
-## Collections
+# Contentstack Postman Collections
 
-### Auto-generated Collection
+Contentstack Postman collection covers all the Content Delivery and Content Management API endpoints for Contentstack.
 
-A updated Postman Collection is created whenever a new api is added to [Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/) and [Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/)
+Click on the respective **Run in Postman** button to automatically import the collection into your Postman app. Or, you can download the JSON file of the respective Postman Collection and import the file in Postman.
 
+**CDA Postman Collection**
 
-### Content Delivery API Collection.
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c49afc53321a56148268#?env%5BContent%20Delivery%20API-Environment-staging%5D=W3sia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6ImNkbi5jb250ZW50c3RhY2suaW8iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoiYXBpX2tleSIsInZhbHVlIjoiYmx0MDJmN2I0NTM3OGIwMDhlZSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0In0seyJrZXkiOiJkZWxpdmVyeV90b2tlbiIsInZhbHVlIjoiY3M1YjY5ZmFmMzVlZmRlYmQ5MWQwOGJjZjQiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoiZW52aXJvbm1lbnQiLCJ2YWx1ZSI6InByb2R1Y3Rpb24iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoibG9jYWxlIiwidmFsdWUiOiJlbi11cyIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0In0seyJrZXkiOiJwYWdpbmF0aW9uX3Rva2VuIiwidmFsdWUiOiJibHRkOGQ4YjNkNDI3OTE3Nzk2MDQ4NjIyIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQifSx7ImtleSI6InN5bmNfdG9rZW4iLCJ2YWx1ZSI6ImJsdDQyZDhmZWVlODZmZjFlYjZkMGRlNWMiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoiY29udGVudF90eXBlX3VpZCIsInZhbHVlIjoicHJvZHVjdCIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0In0seyJrZXkiOiJnbG9iYWxfZmllbGRfdWlkIiwidmFsdWUiOiJzZW8iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoiZW50cnlfdWlkIiwidmFsdWUiOiJibHRhMjUwMDU0Y2ZhNGY1YWFiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQifSx7ImtleSI6ImFzc2V0X3VpZCIsInZhbHVlIjoiYmx0MTljMzRlNTM3NDQxODQ4NCIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0In1d)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)]
+**CMA Postman Collection**
 
-### Content Management API Collection
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3a985d9a451733156c69#?env%5BContent%20Management%20API-Environment-development%5D=W3sia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6ImFwaS5jb250ZW50c3RhY2suaW8iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9rZXkiLCJ2YWx1ZSI6InlvdXJfYXBpX2tleSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjZXNzX3Rva2VuIiwidmFsdWUiOiJ5b3VyX2FjY2Vzc190b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibWFuYWdlbWVudF90b2tlbiIsInZhbHVlIjoibWFuYWdlbWVudF90b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXV0aHRva2VuIiwidmFsdWUiOiJ5b3VyX2F1dGh0b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52aXJvbm1lbnQiLCJ2YWx1ZSI6InlvdXJfZW52aXJvbm1lbnQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImxvY2FsZSIsInZhbHVlIjoieW91cl9sb2NhbGUiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJfYWN0aXZhdGlvbl90b2tlbiIsInZhbHVlIjoieW91cl91c2VyX2FjdGl2YXRpb25fdG9rZW4iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6Im9yZ2FuaXphdGlvbl91aWQiLCJ2YWx1ZSI6InlvdXJfb3JnYW5pemF0aW9uX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2hhcmVfdWlkIiwidmFsdWUiOiJ5b3VyX3NoYXJlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoib3JnX3VpZCIsInZhbHVlIjoieW91cl9vcmdfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2dfdWlkIiwidmFsdWUiOiJ5b3VyX2xvZ191aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6Im93bmVyc2hpcF90b2tlbiIsInZhbHVlIjoieW91cl9vd25lcnNoaXBfdG9rZW4iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImNvbnRlbnRfdHlwZV91aWQiLCJ2YWx1ZSI6InlvdXJfY29udGVudF90eXBlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZ2xvYmFsX2ZpZWxkX3VpZCIsInZhbHVlIjoieW91cl9nbG9iYWxfZmllbGRfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJlbnRyeV91aWQiLCJ2YWx1ZSI6InlvdXJfZW50cnlfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ2ZXJzaW9uX251bWJlciIsInZhbHVlIjoieW91cl92ZXJzaW9uX251bWJlciIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfdWlkIiwidmFsdWUiOiJ5b3VyX2Fzc2V0X3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfdHlwZSIsInZhbHVlIjoieW91cl9hc3NldF90eXBlIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJmb2xkZXJfdWlkIiwidmFsdWUiOiJ5b3VyX2ZvbGRlcl91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImN1c3RvbV9maWVsZF91aWQiLCJ2YWx1ZSI6InlvdXJfY3VzdG9tX2ZpZWxkX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoid2lkZ2V0X3VpZCIsInZhbHVlIjoieW91cl93aWRnZXRfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJleHRlbnNpb25fdWlkIiwidmFsdWUiOiJ5b3VyX2V4dGVuc2lvbl91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImV4dGVuc2lvbl9pZCIsInZhbHVlIjoieW91cl9leHRlbnNpb25faWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InJlbGVhc2VfdWlkIiwidmFsdWUiOiJ5b3VyX3JlbGVhc2VfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ3b3JrZmxvd191aWQiLCJ2YWx1ZSI6InlvdXJfd29ya2Zsb3dfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJydWxlX3VpZCIsInZhbHVlIjoieW91cl9ydWxlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoi4oCLZW50cnlfdWlkIiwidmFsdWUiOiJ5b3VyX+KAi2VudHJ5X3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibGFiZWxfdWlkIiwidmFsdWUiOiJ5b3VyX2xhYmVsX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiY29kZSIsInZhbHVlIjoieW91cl9jb2RlIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2NhbGVfdWlkIiwidmFsdWUiOiJ5b3VyX2xvY2FsZV91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImVudmlyb25tZW50X25hbWUiLCJ2YWx1ZSI6InlvdXJfZW52aXJvbm1lbnRfbmFtZSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW5fdWlkIiwidmFsdWUiOiJ5b3VyX3Rva2VuX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoicm9sZV91aWQiLCJ2YWx1ZSI6InlvdXJfcm9sZV91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6IndlYmhvb2tfdWlkIiwidmFsdWUiOiJ5b3VyX3dlYmhvb2tfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ3ZWJob29rX1VJRCIsInZhbHVlIjoieW91cl93ZWJob29rX1VJRCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZXhlY3V0aW9uX3VpZCIsInZhbHVlIjoieW91cl9leGVjdXRpb25fdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2dfaXRlbV91aWQiLCJ2YWx1ZSI6InlvdXJfbG9nX2l0ZW1fdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaXNoX3F1ZXVlX3VpZCIsInZhbHVlIjoieW91cl9wdWJsaXNoX3F1ZXVlX1VJRCIsImVuYWJsZWQiOnRydWV9XQ==)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)] 
+## Update Postman Collection
 
-## Development
+As Contentstack releases new features and keeps adding API requests associated with the release, it’s better to use an updated version of Postman collection. To get an updated version of our Postman Collection, you can either re-import the collection by clicking the “Run in Postman” button mentioned above or by running this script.
 
+To update the existing version of Contentstack’s Postman collection, perform the following steps:
 
-### Requirements
+1.  You can either download this repository or clone it by running the following command in your terminal:  
+    ```sh 
+        git clone https://github.com/contentstack/contentstack-postman-collections.git
+    ```
+2.  Inside the terminal, run this command to go in postman folder:  
+    ```sh 
+        cd contentstack-postman-collections
+    ```    
+3.  Install necessary modules by running either npm install or npm i command in the terminal.
+4.  Navigate to the .env file, and add your Postman’s API key and collections’ UID.  
 
-This project requires a [Node](https://nodejs.org/) environment, with `npm` installed.
+    To get Postman’s API key, you need to log in or create a Postman account and get the API key. To learn how to create an API key, refer to the [Postman’s API key generation](https://learning.postman.com/docs/postman/postman-api/intro-api/#generating-a-postman-api-key) article.  
 
-### Guide 
+    To get collections’ API Key, refer to the [Get All Collections](https://documenter.getpostman.com/view/631643/JsLs/?version=latest#3190c896-4216-a0a3-aa38-a041d0c2eb72) API request.  
 
-To get a new Postman Collections.
+5.  To pull or clone our latest postman collection, run npm start in the terminal.  
+    **Note**: If this command does not work in any powershell, try switching to Bash terminal by following the steps discussed in this [section](https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal).
+6.  Run the following command to update your postman collection:
 
-```sh
-# clone this repo or download it
-git clone https://github.com/
-
-# change directory to repo
-cd contentstack-postman
-
-# installation
-npm install or npm i
-
-# npm start, this command will pull/clone the latest collections.
-npm start 
-
-# following command will update your collection
-npm run updateAll
-
-# to update one collection
-npm run update <collection_name>
+```sh  
+ #For updating whole collection: 
+ npm run updateAll
+ 
+ #For updating single collection: 
+ npm run update <collection_name>  
 ```
-for understanding working of each api reffer our `Documentation` [Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/) and [Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/)
+
+Specify the name of collection in place of <collection_name>. Type cda for "[Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/)" and cma for “[Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/).”
+
+# Define Environment Variables
+
+Contentstack recommends using environments instead of global or collection variables. For ease of use, when you download a collection, you download the respective environment too.
+
+Here are certain variables that you need to update accordingly.
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td>
+
+Variable
+
+</td>
+
+<td>
+
+Description
+
+</td>
+
+<td>
+
+Example
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+{{base_url}}
+
+</td>
+
+<td>
+
+Enter the endpoint - NA/EU
+
+</td>
+
+<td>
+
+api.contentstack.io
+
+cdn.contentstack.io
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+# Usage
+
+Once you download the Postman app and download the latest collection, perform the following steps:
+
+1.  Make sure to select the appropriate API environment on the top right.
+2.  Add your credentials and other required environment variables.
+3.  [For CMA Users only] If you are using Postman Collection for Content Management API requests, run the **User Session** Authentication request. Your authtoken will be automatically stored in a cookie. To avoid this, we recommend you to [whitelist your API domain](https://learning.postman.com/docs/postman/sending-api-requests/cookies/#whitelisting-domains-for-programmatic-access-of-cookies).
+4.  Make the API Requests that you need.
+
+For more details refer to our documentation.
+
+# Postman Collection Updates
+
+We periodically update our Postman Collection. So, you may need to download it from time to time to stay up to date with the latest changes.
+
+# See Also
+
+[Content Delivery API Postman Collection](https://stag-www.contentstack.com/docs/developers/apis/content-delivery-api/#postman-collection)
+
+[Content Management API Postman Collection](https://stag-www.contentstack.com/docs/developers/apis/content-management-api/#postman-collection)
+
+[Content Delivery API documentation](https://www.contentstack.com/docs/developers/apis/content-delivery-api/)
+
+[Content Management API documentation](https://www.contentstack.com/docs/developers/apis/content-management-api/)
+
