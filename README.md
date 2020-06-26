@@ -1,6 +1,6 @@
-# Contentstack Postman Collections
+[![Contentstack](https://www.contentstack.com/assets/blt440aad5a09c89b2f/contentstack_icon.svg)](https://www.contentstack.com/)
 
-[![Contentstack](https://www.contentstack.com/docs/static/images/contentstack.png)](https://www.contentstack.com/)
+# Contentstack Postman Collections
 
 The Contentstack Postman Collection is a set of preconfigured requests that will make it easy for you to get started with the [Contentstack APIs](https://www.contentstack.com/docs/developers#use-the-apis) and try out our API requests through the popular [Postman](https://www.getpostman.com/) REST client.
 
