@@ -47,7 +47,7 @@ To update the existing version of Contentstack’s Postman collection, perform t
     To get collections’ API Key, refer to the [Get All Collections](https://documenter.getpostman.com/view/631643/JsLs/?version=latest#3190c896-4216-a0a3-aa38-a041d0c2eb72) API request.  
 
 5.  To pull or clone our latest postman collection, run `npm start` in the terminal. 
-    This will clone our collection in the ".latest-collection" directory. 
+    This will clone our collections in the ".latest-collection" directory. 
 
     **Note**: If this command does not work in any powershell, try switching to Bash terminal by following the steps discussed in this [section](https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal).
 6.  Run the following command to update your postman collection:
