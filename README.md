@@ -36,14 +36,23 @@ To update the existing version of Contentstack’s Postman collection, perform t
     ```sh 
         cd contentstack-postman-collections
     ```    
-3.  Install necessary modules by running either npm install or npm i command in the terminal.
-4.  Navigate to the .env file, and add your Postman’s API key and collections’ UID.  
+3.  Install necessary modules by running either 
+    ```sh
+        npm install or npm i 
+    ```
+    command in the terminal.
+4.  Navigate to the **.env** file, and add your Postman’s API key and collections’ UID.  
 
     To get Postman’s API key, you need to log in or create a Postman account and get the API key. To learn how to create an API key, refer to the [Postman’s API key generation](https://learning.postman.com/docs/postman/postman-api/intro-api/#generating-a-postman-api-key) article.  
 
     To get collections’ API Key, refer to the [Get All Collections](https://documenter.getpostman.com/view/631643/JsLs/?version=latest#3190c896-4216-a0a3-aa38-a041d0c2eb72) API request.  
 
-5.  To pull or clone our latest postman collection, run npm start in the terminal.  
+5.  To pull or clone our latest postman collection, run 
+    ```sh 
+        #this will clone our collection into directeory ".latest-collection"
+        npm start 
+    ``` 
+    in the terminal.  
     **Note**: If this command does not work in any powershell, try switching to Bash terminal by following the steps discussed in this [section](https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal).
 6.  Run the following command to update your postman collection:
 
@@ -55,7 +64,7 @@ To update the existing version of Contentstack’s Postman collection, perform t
  npm run update <collection_name>  
 ```
 
-Specify the name of collection in place of <collection_name>. Type cda for "[Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/)" and cma for “[Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/).”
+Specify the name of collection in place of <collection_name>. Type **cda** for [Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/) and **cma** for [Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/).
 
 # Define Environment Variables
 
