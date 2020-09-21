@@ -28,6 +28,14 @@ Click on the respective **Run in Postman** button to automatically import the co
 
 **Note**: For Windows, downloading the Content Management API collection doesn't download the environment automatically due to the larger size of the environment file. Consequently, Windows users need to download the [Content Management API - Environment](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json) file manually and [import it in their Postman environment](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data).
 
+## Environment Files
+
+Though clicking on any of the above **Run in Postman** buttons will automatically import the collection along with the respective environment, you can also download and import the environments manually: 
+
+- [Content Management API - Environment](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json)
+- [Content Delivery API - Environment](https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json)
+- [GraphQL API - Environment](https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json)
+
 ## Update Postman Collection
 
 As Contentstack releases new features and keeps adding API requests associated with the release, it’s better to use an updated version of Postman collection. To get an updated version of our Postman Collection, you can either re-import the collection by clicking the “Run in Postman” button mentioned above or by running this script.
@@ -48,7 +56,6 @@ To update the existing version of Contentstack’s Postman collection, perform t
     To get Postman’s API key, you need to log in or create a Postman account and get the API key. To learn how to create an API key, refer to the [Postman’s API key generation](https://learning.postman.com/docs/postman/postman-api/intro-api/#generating-a-postman-api-key) article.  
 
     To get collections’ API Key, refer to the [Get All Collections](https://documenter.getpostman.com/view/631643/JsLs/?version=latest#3190c896-4216-a0a3-aa38-a041d0c2eb72) API request.  
-
 5.  To pull or clone our latest postman collection, run `npm start` in the terminal. 
     This will clone our collections in the ".latest-collection" directory. 
 
@@ -64,7 +71,7 @@ To update the existing version of Contentstack’s Postman collection, perform t
     ```
     Specify the name of collection in place of  <collection_name>. 
     Type **cda** for “[Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/)”, **cma** for “[Content Management API](https://www.contentstack.com/docs/developers/apis/content-management-api/)”, and **graphql** for “[GraphQL Content Delivery API](https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api)”.
-
+7. While the above steps will update your postman collection, you still need to download and import the [environment file](#environment-files) manually.
 
 # Define Environment Variables
 
