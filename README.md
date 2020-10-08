@@ -12,7 +12,7 @@ To use the Contentstack Postman Collection, you will need the latest [Postman ap
 
 Contentstack Postman collection covers all the Content Delivery,  and Content Management, and GraphQL Content Delivery API endpoints for Contentstack.
 
-Click on the respective **Run in Postman** button to automatically import the collection into your Postman app. Or, you can download the JSON file of the respective Postman Collection and import the file in Postman.
+Click on the respective **Run in Postman** button to automatically import the collection along with the respective environment file into your Postman app. (Or, you can download the JSON file of the respective Postman Collection and import the file in Postman.)
 
 **CDA Postman Collection**
 
@@ -22,19 +22,21 @@ Click on the respective **Run in Postman** button to automatically import the co
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3a985d9a451733156c69#?env%5BContent%20Management%20API-Environment%5D=W3sia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6ImFwaS5jb250ZW50c3RhY2suaW8iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9rZXkiLCJ2YWx1ZSI6InlvdXJfYXBpX2tleSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjZXNzX3Rva2VuIiwidmFsdWUiOiJ5b3VyX2FjY2Vzc190b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibWFuYWdlbWVudF90b2tlbiIsInZhbHVlIjoibWFuYWdlbWVudF90b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXV0aHRva2VuIiwidmFsdWUiOiJ5b3VyX2F1dGh0b2tlbiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52aXJvbm1lbnQiLCJ2YWx1ZSI6InlvdXJfZW52aXJvbm1lbnQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImxvY2FsZSIsInZhbHVlIjoieW91cl9sb2NhbGUiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJfYWN0aXZhdGlvbl90b2tlbiIsInZhbHVlIjoieW91cl91c2VyX2FjdGl2YXRpb25fdG9rZW4iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6Im9yZ2FuaXphdGlvbl91aWQiLCJ2YWx1ZSI6InlvdXJfb3JnYW5pemF0aW9uX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2hhcmVfdWlkIiwidmFsdWUiOiJ5b3VyX3NoYXJlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoib3JnX3VpZCIsInZhbHVlIjoieW91cl9vcmdfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2dfdWlkIiwidmFsdWUiOiJ5b3VyX2xvZ191aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6Im93bmVyc2hpcF90b2tlbiIsInZhbHVlIjoieW91cl9vd25lcnNoaXBfdG9rZW4iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImNvbnRlbnRfdHlwZV91aWQiLCJ2YWx1ZSI6InlvdXJfY29udGVudF90eXBlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZ2xvYmFsX2ZpZWxkX3VpZCIsInZhbHVlIjoieW91cl9nbG9iYWxfZmllbGRfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJlbnRyeV91aWQiLCJ2YWx1ZSI6InlvdXJfZW50cnlfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ2ZXJzaW9uX251bWJlciIsInZhbHVlIjoieW91cl92ZXJzaW9uX251bWJlciIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfdWlkIiwidmFsdWUiOiJ5b3VyX2Fzc2V0X3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfdHlwZSIsInZhbHVlIjoieW91cl9hc3NldF90eXBlIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJmb2xkZXJfdWlkIiwidmFsdWUiOiJ5b3VyX2ZvbGRlcl91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImN1c3RvbV9maWVsZF91aWQiLCJ2YWx1ZSI6InlvdXJfY3VzdG9tX2ZpZWxkX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoid2lkZ2V0X3VpZCIsInZhbHVlIjoieW91cl93aWRnZXRfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJleHRlbnNpb25fdWlkIiwidmFsdWUiOiJ5b3VyX2V4dGVuc2lvbl91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImV4dGVuc2lvbl9pZCIsInZhbHVlIjoieW91cl9leHRlbnNpb25faWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InJlbGVhc2VfdWlkIiwidmFsdWUiOiJ5b3VyX3JlbGVhc2VfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ3b3JrZmxvd191aWQiLCJ2YWx1ZSI6InlvdXJfd29ya2Zsb3dfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJydWxlX3VpZCIsInZhbHVlIjoieW91cl9ydWxlX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoi4oCLZW50cnlfdWlkIiwidmFsdWUiOiJ5b3VyX+KAi2VudHJ5X3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibGFiZWxfdWlkIiwidmFsdWUiOiJ5b3VyX2xhYmVsX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiY29kZSIsInZhbHVlIjoieW91cl9jb2RlIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2NhbGVfdWlkIiwidmFsdWUiOiJ5b3VyX2xvY2FsZV91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImVudmlyb25tZW50X25hbWUiLCJ2YWx1ZSI6InlvdXJfZW52aXJvbm1lbnRfbmFtZSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW5fdWlkIiwidmFsdWUiOiJ5b3VyX3Rva2VuX3VpZCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoicm9sZV91aWQiLCJ2YWx1ZSI6InlvdXJfcm9sZV91aWQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6IndlYmhvb2tfdWlkIiwidmFsdWUiOiJ5b3VyX3dlYmhvb2tfdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ3ZWJob29rX1VJRCIsInZhbHVlIjoieW91cl93ZWJob29rX1VJRCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZXhlY3V0aW9uX3VpZCIsInZhbHVlIjoieW91cl9leGVjdXRpb25fdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsb2dfaXRlbV91aWQiLCJ2YWx1ZSI6InlvdXJfbG9nX2l0ZW1fdWlkIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaXNoX3F1ZXVlX3VpZCIsInZhbHVlIjoieW91cl9wdWJsaXNoX3F1ZXVlX1VJRCIsImVuYWJsZWQiOnRydWV9XQ==)
 
+**Note**: For Windows, downloading the Content Management API collection doesn't download the environment automatically due to the larger size of the environment file. Consequently, Windows users need to download the respective [environment file](#environment-files) manually and [import it in their Postman environment](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data).
+
 **GraphQL CDA Postman Collection**
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/80005be09aac25f4b4a5#?env%5BGraphQL%20API%20-%20Environment%5D=W3sia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6ImdyYXBocWwuY29udGVudHN0YWNrLmNvbSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0In0seyJrZXkiOiJhcGlfa2V5IiwidmFsdWUiOiJibHQwMmY3YjQ1Mzc4YjAwOGVlIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQifSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiY3M1YjY5ZmFmMzVlZmRlYmQ5MWQwOGJjZjQiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9LHsia2V5IjoiZW52aXJvbm1lbnQiLCJ2YWx1ZSI6InByb2R1Y3Rpb24iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCJ9XQ==)
-
-**Note**: For Windows, downloading the Content Management API collection doesn't download the environment automatically due to the larger size of the environment file. Consequently, Windows users need to download the [Content Management API - Environment](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json) file manually and [import it in their Postman environment](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data).
 
 ## Environment Files
 
 Though clicking on any of the above **Run in Postman** buttons will automatically import the collection along with the respective environment, you can also download and import the environments manually: 
 
-- [Content Management API - Environment](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json)
-- [Content Delivery API - Environment](https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json)
-- [GraphQL API - Environment](https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json)
+- Content Management API - Environment: [North America](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json), [Europe](https://www.contentstack.com/assets/bltbd0d078004e9a761/eu_cma_env_variables.json)
+- Content Delivery API - Environment: [North America](https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json), [Europe](https://www.contentstack.com/assets/blt65d576ce4b07003b/eu_cda_env_variables.json)
+- GraphQL API - Environment: [North America](https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json), [Europe](https://www.contentstack.com/assets/blt1b79177a8bd8238e/eu_graphQL_env_variables.json)
+
+Note: By default, the environment file for the “North America” region is imported. To import the environment file for the “Europe” region, you need to download the respective environment listed above and [import the content](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) into Postman.
 
 ## Update Postman Collection
 
@@ -107,7 +109,7 @@ Example
 
 <tr>
 
-<td>
+<td rowspan="2">
 
 {{base_url}}
 
@@ -115,7 +117,7 @@ Example
 
 <td>
 
-Enter the endpoint - NA/EU
+Enter the “North America” endpoint
 
 </td>
 
@@ -126,6 +128,26 @@ api.contentstack.io
 cdn.contentstack.io
 
 graphql.contentstack.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Enter the “Europe” endpoint
+
+</td>
+
+<td>
+
+eu-api.contentstack.com
+
+eu-cdn.contentstack.com
+
+eu-graphql.contentstack.com
 
 </td>
 
