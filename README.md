@@ -32,11 +32,11 @@ Click on the respective **Run in Postman** button to automatically import the co
 
 Though clicking on any of the above **Run in Postman** buttons will automatically import the collection along with the respective environment, you can also download and import the environments manually: 
 
-- Content Management API - Environment: [North America](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json), [Europe](https://www.contentstack.com/assets/bltbd0d078004e9a761/eu_cma_env_variables.json)
+-  Content Management API - Environment: <a href='https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json' target="_blank">North America</a>, <a href='https://www.contentstack.com/assets/bltbd0d078004e9a761/eu_cma_env_variables.json' target="_blank">Europe</a>
 
-- Content Delivery API - Environment: [North America](https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json), [Europe](https://www.contentstack.com/assets/blt65d576ce4b07003b/eu_cda_env_variables.json)
+- Content Delivery API - Environment: <a href='https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json' target="_blank">North America</a>, <a href='https://www.contentstack.com/assets/blt65d576ce4b07003b/eu_cda_env_variables.json' target="_blank">Europe</a>
 
-- GraphQL API - Environment: [North America](https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json), [Europe](https://www.contentstack.com/assets/blt1b79177a8bd8238e/eu_graphQL_env_variables.json)
+- GraphQL API - Environment: <a href='https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json' target="_blank">North America</a>, <a href='https://www.contentstack.com/assets/blt1b79177a8bd8238e/eu_graphQL_env_variables.json' target="_blank">Europe</a>
 
 
 Note: By default, the environment file for the “North America” region is imported. To import the environment file for the “Europe” region, you need to download the respective environment listed above and [import the content](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) into Postman.
