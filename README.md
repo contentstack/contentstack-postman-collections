@@ -32,11 +32,11 @@ Click on the respective **Run in Postman** button to automatically import the co
 
 Though clicking on any of the above **Run in Postman** buttons will automatically import the collection along with the respective environment, you can also download and import the environments manually: 
 
-- Content Management API - Environment: [North America](https://www.contentstack.com/assets/blt941b68d99b9abbf0/cma_env_variables.json), [Europe](https://www.contentstack.com/assets/bltbd0d078004e9a761/eu_cma_env_variables.json)
+- Content Management API - Environment: [North America](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt59a68c1295b26f92/5fa2569263d1be10a906ae20/cma_env_variables.json?disposition=download), [Europe](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt91bcd89960ef6c93/5fa25754419f233493747b6c/eu_cma_env_variables.json?disposition=download)
 
-- Content Delivery API - Environment: [North America](https://www.contentstack.com/assets/blt588e4cf01cdd280a/cda_env_variables.json), [Europe](https://www.contentstack.com/assets/blt65d576ce4b07003b/eu_cda_env_variables.json)
+- Content Delivery API - Environment: [North America](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt524dd36e33e6ea01/5fa243b47ccbb036e77f5003/cda_env_variables.json?disposition=download), [Europe](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt8f23ef1e1649533e/5fa2460f164ebf10ea20de2a/eu_cda_env_variables.json?disposition=download)
 
-- GraphQL API - Environment: [North America](https://www.contentstack.com/assets/blt751e79c193f217c9/graphQL_env_variables.json), [Europe](https://www.contentstack.com/assets/blt1b79177a8bd8238e/eu_graphQL_env_variables.json)
+- GraphQL API - Environment: [North America](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt52a692ad4ffd663c/5fa2620cf9e3517255110db9/graphQL_env_variables.json?disposition=download), [Europe](https://assets.contentstack.io/v3/assets/bltc5a09bf374882538/blt1e3f02366ecf47c8/5fa2620be74fe474ced68c6a/eu_graphQL_env_variables.json?disposition=download)
 
 
 Note: By default, the environment file for the “North America” region is imported. To import the environment file for the “Europe” region, you need to download the respective environment listed above and [import the content](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) into Postman.
