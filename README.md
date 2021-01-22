@@ -1,4 +1,4 @@
-[![Contentstack](https://www.contentstack.com/assets/blt440aad5a09c89b2f/contentstack_icon.svg)](https://www.contentstack.com/)
+[![Contentstack](https://images.contentstack.io/v3/assets/bltc5a09bf374882538/blt8f67099538d234d7/600a87ac6215cf0f9a18c467/contentstack_icon.svg)](https://www.contentstack.com/)
 
 # Contentstack Postman Collections
 
