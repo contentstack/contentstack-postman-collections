@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "02772dd8-2c7d-4af0-88b3-e518fe2c5d40",
+		"_postman_id": "c860e5a9-b894-4cb4-86ac-c9301722c030",
 		"name": "Automation Hub V1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29011400"
+		"_exporter_id": "18891095"
 	},
 	"item": [
 		{
@@ -31,7 +31,18 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\" : \"{{organization_uid}}\",  //Enter project title(required)\n    \"description\" : \"Project description\",  //Enter description\n    \"tags\": [\"tag\"]   //Enter multiple tags in the project\n}",
@@ -78,7 +89,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects?limit=30&skip=0",
 							"host": [
@@ -153,7 +175,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}",
 							"host": [
@@ -205,7 +238,18 @@
 					],
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\" : \"Update Project Title\",   //Enter new project title to update\n    \"description\": \"Description\",   //Enter description\n    \"tags\": [\"update-tag\"]   //Enter multiple tags in the project\n}",
@@ -248,7 +292,18 @@
 					],
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}",
 							"host": [
@@ -294,7 +349,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/automations?limit=30&skip=0",
 							"host": [
@@ -378,7 +444,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/automations/{{automation_uid}}",
 							"host": [
@@ -422,7 +499,18 @@
 					],
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"active\": true //Set this value to 'true' to activate automation or vice-versa\n}",
@@ -479,7 +567,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/executions?limit=30&skip=0",
 							"host": [
@@ -556,7 +655,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/executions/{{execution_uid}}",
 							"host": [
@@ -603,7 +713,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/audit-logs?limit=30&skip=0",
 							"host": [
@@ -675,7 +796,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/audit-logs/{{auditlog_uid}}",
 							"host": [
@@ -722,7 +854,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/accounts?limit=30&skip=0",
 							"host": [
@@ -794,7 +937,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/accounts/{{account_uid}}",
 							"host": [
@@ -838,7 +992,18 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"type\": \"text\",  //Enter the type of variable: text|password\n    \"key\": \"variableName{{organization_uid}}\", // Enter the variable name\n    \"value\": \"variable value\" //Enter the variable value\n}",
@@ -888,7 +1053,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables?limit=30&skip=0",
 							"host": [
@@ -960,7 +1136,18 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables/{{variable_uid}}",
 							"host": [
@@ -1005,7 +1192,18 @@
 					],
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"type\": \"password\",  //Enter the type of variable: text|password\n    \"key\": \"updatedVariableName\", // Enter the variable name\n    \"value\": \"updated variable value\" //Enter the variable value\n}",
@@ -1050,7 +1248,18 @@
 					],
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables/{{variable_uid}}",
 							"host": [
@@ -1076,15 +1285,15 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"pm.request.headers.add({",
-					"    key:\"authtoken\",",
-					"    value:pm.collectionVariables.get(\"authtoken\")",
-					"});",
+					"// pm.request.headers.add({",
+					"//     key:\"authtoken\",",
+					"//     value:pm.collectionVariables.get(\"authtoken\")",
+					"// });",
 					"",
-					"pm.request.headers.add({",
-					"    key:\"organization_uid\",",
-					"    value:pm.collectionVariables.get(\"organization_uid\")",
-					"});"
+					"// pm.request.headers.add({",
+					"//     key:\"organization_uid\",",
+					"//     value:pm.collectionVariables.get(\"organization_uid\")",
+					"// });"
 				]
 			}
 		},
@@ -1101,17 +1310,17 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http://localhost:3002",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "authtoken",
-			"value": "auth",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "organization_uid",
-			"value": "org",
+			"value": "",
 			"type": "string"
 		},
 		{
