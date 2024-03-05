@@ -1,0 +1,1356 @@
+{
+	"info": {
+		"_postman_id": "c860e5a9-b894-4cb4-86ac-c9301722c030",
+		"name": "Automation Hub V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18891095"
+	},
+	"item": [
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "1. Create a Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check basic data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var reqData = JSON.parse(pm.request.body.raw)",
+									"    pm.expect(jsonData.title).to.eql(reqData.title);",
+									"    pm.expect(jsonData.id).to.be.a('string');",
+									"",
+									"    pm.collectionVariables.set(\"project_uid\", jsonData.id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"{{organization_uid}}\",  //Enter project title(required)\n    \"description\" : \"Project description\",  //Enter description\n    \"tags\": [\"tag\"]   //Enter multiple tags in the project\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get all projects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    const org_uid = pm.request.headers.get('organization_uid');",
+									"    pm.expect(response.projects).to.be.an('array');",
+									"    response.projects.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('title');",
+									"        pm.expect(item).to.have.property('user_id');",
+									"        pm.expect(item).to.have.property('org_id').and.to.equal(org_uid);",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of projects to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many projects."
+								},
+								{
+									"key": "asc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the projects in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the projects in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of projects",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get a Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Title is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.title).to.be.a('string');",
+									"    pm.expect(jsonData.description).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Update a project",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if uid in the URL is equal to uid in the response\", function () {",
+									"    var uidInUrl = pm.variables.get(\"project_uid\");",
+									"    var responseJSON = pm.response.json();",
+									"    var uidInResponse = responseJSON.id;",
+									"    pm.expect(uidInResponse).to.equal(uidInUrl);",
+									"});",
+									"",
+									"pm.test(\"Check if body sent in data is equal to response title\", function () {",
+									"    var requestData = JSON.parse(pm.request.body.raw);",
+									"    var responseJSON = pm.response.json();",
+									"    var titleInRequest = requestData.title;",
+									"    var titleInResponse = responseJSON.title;",
+									"    pm.expect(titleInResponse).to.equal(titleInRequest);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Update Project Title\",   //Enter new project title to update\n    \"description\": \"Description\",   //Enter description\n    \"tags\": [\"update-tag\"]   //Enter multiple tags in the project\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Delete a project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if project is successfully deleted\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    pm.expect(responseJSON.message).to.equal(\"Project deleted successfully.\");",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Automations",
+			"item": [
+				{
+					"name": "1. Get all automations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.rules).to.be.an('array');",
+									"    response.rules.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('title');",
+									"        pm.expect(item).to.have.property('user_id');",
+									"        pm.expect(item).to.have.property('active');",
+									"        pm.expect(item).to.have.property('org_id');",
+									"    });",
+									"    pm.collectionVariables.set('automation_uid', response.rules[0].id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/automations?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"automations"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of automations to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many automations."
+								},
+								{
+									"key": "asc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the automations in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the automations in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "show_steps",
+									"value": "true",
+									"description": "Set this value to 'true' to include steps detail in the output",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of automations",
+									"disabled": true
+								},
+								{
+									"key": "query",
+									"value": "{'active':'true'}",
+									"description": "Set this value to {'active':'true'} to get activated automations and vice-versa",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get an automation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Title is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.title).to.be.a('string');",
+									"    pm.expect(jsonData.description).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/automations/{{automation_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"automations",
+								"{{automation_uid}}"
+							],
+							"query": [
+								{
+									"key": "show_steps",
+									"value": "true",
+									"description": "Set this value to 'true' to include steps detail in the output",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Activate/Deactivate an automation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if automation is activated successfully\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    pm.expect(responseJSON.message).to.equal(\"automation has been activated successfully\");",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"active\": true //Set this value to 'true' to activate automation or vice-versa\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/automations/{{automation_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"automations",
+								"{{automation_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Execution Logs",
+			"item": [
+				{
+					"name": "1. Get all execution logs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.executions).to.be.an('array');",
+									"    response.executions.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('title');",
+									"        pm.expect(item).to.have.property('trigger_payload_id');",
+									"        pm.expect(item).to.have.property('details');",
+									"        pm.expect(item).to.have.property('org_id');",
+									"    });",
+									"    pm.collectionVariables.set('execution_uid', response.executions[0].id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/executions?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"executions"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of execution logs to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many execution logs."
+								},
+								{
+									"key": "asc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the execution logs in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the execution logs in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of execution logs",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get an execution log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Title, Status is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.title).to.be.a('string');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/executions/{{execution_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"executions",
+								"{{execution_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Audit Logs",
+			"item": [
+				{
+					"name": "1. Get all audit logs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.logs).to.be.an('array');",
+									"    response.logs.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('event');",
+									"        pm.expect(item).to.have.property('module');",
+									"        pm.expect(item).to.have.property('metadata');",
+									"        pm.expect(item).to.have.property('org_uid');",
+									"    });",
+									"    pm.collectionVariables.set('auditlog_uid', response.logs[0].uid);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/audit-logs?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"audit-logs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of audit logs to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many audit logs."
+								},
+								{
+									"key": "asc",
+									"value": "created_at",
+									"description": "Enter the string value of the field for sorting the audit logs in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "created_at",
+									"description": "Enter the string value of the field for sorting the audit logs in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of audit logs",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get an audit log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Event, Module is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.event).to.be.a('string');",
+									"    pm.expect(jsonData.module).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/audit-logs/{{auditlog_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"audit-logs",
+								"{{auditlog_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "1. Get all accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.accounts).to.be.an('array');",
+									"    response.accounts.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('group_name');",
+									"        pm.expect(item).to.have.property('title');",
+									"        pm.expect(item).to.have.property('connector_id');",
+									"        pm.expect(item).to.have.property('org_id');",
+									"    });",
+									"    pm.collectionVariables.set('account_uid', response.accounts[0].id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/accounts?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of connected apps to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many connected apps"
+								},
+								{
+									"key": "asc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the connected apps in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "title",
+									"description": "Enter the string value of the field for sorting the connected apps in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of connected apps",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get an account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Title is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.title).to.be.a('string');",
+									"    pm.expect(jsonData.description).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/accounts/{{account_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"accounts",
+								"{{account_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project Variable",
+			"item": [
+				{
+					"name": "1. Create a project variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check basic data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var reqData = JSON.parse(pm.request.body.raw)",
+									"    pm.expect(jsonData.key).to.eql(reqData.key);",
+									"    pm.expect(jsonData.value).to.be.a('string');",
+									"",
+									"    pm.collectionVariables.set(\"variable_uid\", jsonData.id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"text\",  //Enter the type of variable: text|password\n    \"key\": \"variableName{{organization_uid}}\", // Enter the variable name\n    \"value\": \"variable value\" //Enter the variable value\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"variables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get all project variables",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each item in the array has the required properties\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.variables).to.be.an('array');",
+									"    response.variables.forEach(function (item) {",
+									"        pm.expect(item).to.have.property('project_id');",
+									"        pm.expect(item).to.have.property('key');",
+									"        pm.expect(item).to.have.property('value');",
+									"        pm.expect(item).to.have.property('org_id');",
+									"    });",
+									"    pm.collectionVariables.set('variable_uid', response.variables[0].id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables?limit=30&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"variables"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30",
+									"description": "Enter the number of variables to be fetched at once"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "Enter a number to skip that many connected apps"
+								},
+								{
+									"key": "asc",
+									"value": "created_at",
+									"description": "Enter the string value of the field for sorting the variables in ascending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "created_at",
+									"description": "Enter the string value of the field for sorting the variables in descending order by that field.",
+									"disabled": true
+								},
+								{
+									"key": "include_count",
+									"value": "true",
+									"description": "Set this value to 'true' to include the count of variables",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get a project variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Key, Value is present and is a string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.key).to.be.a('string');",
+									"    pm.expect(jsonData.value).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"org_id in response is equal to orgid in header\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    var orgIdHeader = pm.request.headers.get('organization_uid');",
+									"    pm.expect(responseJSON.org_id).to.equal(orgIdHeader);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables/{{variable_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"variables",
+								"{{variable_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Update a project variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if uid in the URL is equal to uid in the response\", function () {",
+									"    var uidInUrl = pm.variables.get(\"variable_uid\");",
+									"    var responseJSON = pm.response.json();",
+									"    var uidInResponse = responseJSON.id;",
+									"    pm.expect(uidInResponse).to.equal(uidInUrl);",
+									"});",
+									"",
+									"pm.test(\"Check if body sent in data is equal to response title\", function () {",
+									"    var requestData = JSON.parse(pm.request.body.raw);",
+									"    var responseJSON = pm.response.json();",
+									"    var titleInRequest = requestData.title;",
+									"    var titleInResponse = responseJSON.title;",
+									"    pm.expect(titleInResponse).to.equal(titleInRequest);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"password\",  //Enter the type of variable: text|password\n    \"key\": \"updatedVariableName\", // Enter the variable name\n    \"value\": \"updated variable value\" //Enter the variable value\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables/{{variable_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"variables",
+								"{{variable_uid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Delete a project variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if project variable is successfully deleted\", function () {",
+									"    var responseJSON = pm.response.json();",
+									"    pm.expect(responseJSON.message).to.equal(\"Project variable deleted successfully.\");",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "{{authtoken}}",
+								"type": "text"
+							},
+							{
+								"key": "organization_uid",
+								"value": "{{organization_uid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/projects/{{project_uid}}/variables/{{variable_uid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"projects",
+								"{{project_uid}}",
+								"variables",
+								"{{variable_uid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// pm.request.headers.add({",
+					"//     key:\"authtoken\",",
+					"//     value:pm.collectionVariables.get(\"authtoken\")",
+					"// });",
+					"",
+					"// pm.request.headers.add({",
+					"//     key:\"organization_uid\",",
+					"//     value:pm.collectionVariables.get(\"organization_uid\")",
+					"// });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "authtoken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "organization_uid",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "project_uid",
+			"value": ""
+		},
+		{
+			"key": "automation_uid",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "execution_uid",
+			"value": ""
+		},
+		{
+			"key": "auditlog_uid",
+			"value": ""
+		},
+		{
+			"key": "connectedapp_uid",
+			"value": ""
+		},
+		{
+			"key": "account_uid",
+			"value": ""
+		},
+		{
+			"key": "variable_uid",
+			"value": ""
+		}
+	]
+}
